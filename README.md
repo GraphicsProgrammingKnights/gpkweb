@@ -1,3 +1,8 @@
+# GPK Website Repo
+
+## Being developed by Sebastian Noel, Alejandro Jaimes, Stevin George and is currently in development...
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
