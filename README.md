@@ -1,41 +1,124 @@
-# GPK Website Repo
+# Graphics Programming Knights Web Dev Repo
 
-## Being developed by Sebastian Noel, Alejandro Jaimes, Stevin George and is currently in development...
+Website for Graphics Programming Knights, built with **Next.js + TypeScript + Three.js**.
 
+## Team
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+- Sebastian Noel (@sebastian-noel)
+- Stevin George (@stevin006)
+- Alejandro Jaimes (@alecocosette)
+
+Message Sebastian through <a href="https://discord.com/users/353944957779968010">discord</a> if you have an interest in contributing.
+
+## Tech Stack
+
+- Next.js
+- Three.js
+- TypeScript
+- ESLint
+- Node.js (LTS)
 
 ## Getting Started
 
-First, run the development server:
+### Clone Repository
+
+```bash
+git clone https://github.com/GraphicsProgrammingKnights/gpkweb
+```
+
+### Navigate to project directory
+
+```bash
+cd gpkweb
+```
+
+### Prerequisites
+
+- Node.js 20+ (LTS recommended)
+- npm
+
+
+### Set up Node.js version (using [nvm](https://github.com/nvm-sh/nvm))
+
+Use the following commands to ensure you are using Node.js 20 specified in `.nvmrc`
+
+```bash
+nvm install  # Install
+nvm use      # Switch to version
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Lint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+```
 
-## Learn More
+### Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Git Workflow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `main` is protected and always stable.
+- Create branches from `main`: 
 
-## Deploy on Vercel
+  ```bash
+  git checkout -b <branch-type>/<short-descrption>
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  Examples:
+  - `feature/about-section`
+  - `fix/<short-description>`
+  - `chore/<short-description>`
+- Open a Pull Request into `main`.
+- At least 1 teammate review required before merge.
+- Use squash merge for clean history.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Commit Convention
+
+Follow this commit style (examples provided):
+
+- `feat: add hero section`
+- `fix: correct navbar mobile layout`
+- `chore: update dependencies`
+- `docs: improve setup instructions`
+
+## Project Structure
+
+```text
+.
+├── app/                   # Next.js routes
+├── components/            # Reusable UI components
+├── public/                # Static assets
+├── styles/                # Global/component styles
+├── .github/               # GitHub templates/workflows
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+## Infrastructure Plan
+
+- Docker files at repository root (`Dockerfile`, `.dockerignore`, optional `docker-compose.yml`)
+- CI/CD workflows under `.github/workflows/`
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
