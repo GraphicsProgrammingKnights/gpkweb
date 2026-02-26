@@ -80,7 +80,7 @@ npm run start
 - Create branches from `main`: 
 
   ```bash
-  git checkout -b <branch-type>/<short-descrption>
+  git checkout -b <branch-type>/<short-description>
   ```
 
   Examples:
