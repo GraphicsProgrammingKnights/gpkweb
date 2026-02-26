@@ -1,7 +1,5 @@
-# CODEOWNERS
-
-What is CODEOWNERS?
-https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# CODEOWNERS - defines who reviews PRs for specific files/directories
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
 # These users will be requested for review when someone opens a PR
 * @sebastian-noel @stevin006 @alecocosette
