@@ -8,7 +8,7 @@ Website for Graphics Programming Knights, built with **Next.js + TypeScript + Th
 - Stevin George (@stevin006)
 - Alejandro Jaimes (@alecocosette)
 
-Message Sebastian through <a href="https://discord.com/users/353944957779968010">discord</a> if you have an interest in contributing.
+Message Sebastian through [discord](https://discord.com/users/353944957779968010) if you have an interest in contributing.
 
 ## Tech Stack
 
@@ -36,7 +36,6 @@ cd gpkweb
 
 - Node.js 20+ (LTS recommended)
 - npm
-
 
 ### Set up Node.js version (using [nvm](https://github.com/nvm-sh/nvm))
 
@@ -77,7 +76,7 @@ npm run start
 ## Git Workflow
 
 - `main` is protected and always stable.
-- Create branches from `main`: 
+- Create branches from `main`:
 
   ```bash
   git checkout -b <branch-type>/<short-description>
