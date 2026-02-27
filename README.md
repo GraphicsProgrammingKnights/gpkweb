@@ -4,9 +4,9 @@ Website for Graphics Programming Knights, built with **Next.js + TypeScript + Th
 
 ## Team
 
-- Sebastian Noel (@sebastian-noel)
-- Stevin George (@stevin006)
-- Alejandro Jaimes (@alecocosette)
+- Sebastian Noel ([@sebastian-noel](https://github.com/sebastian-noel))
+- Stevin George ([@stevin006](https://github.com/stevin006))
+- Alejandro Jaimes ([@alecocosette](https://github.com/alecocosette))
 
 Message Sebastian through [discord](https://discord.com/users/353944957779968010) if you have an interest in contributing.
 
@@ -84,8 +84,8 @@ npm run start
 
   Examples:
   - `feature/about-section`
-  - `fix/<short-description>`
-  - `chore/<short-description>`
+  - `fix/mobile-view-bug`
+  - `chore/docker-setup`
 - Open a Pull Request into `main`.
 - At least 1 teammate review required before merge.
 - Use squash merge for clean history.
