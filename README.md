@@ -1,6 +1,8 @@
 # Graphics Programming Knights Web Dev Repo
 
-Website for Graphics Programming Knights, built with **Next.js + TypeScript + Three.js**.
+<div align="center">
+  <img src="public/gpk_logo_transparent.png" alt="GPK Logo" width=200 height = 200>
+</div>
 
 ## Team
 
@@ -118,7 +120,7 @@ Follow this commit style (examples provided):
 
 ## Docker
 
-### Prerequisites
+### Docker Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) installed
 - [Docker Compose](https://docs.docker.com/compose/install/) (included with Docker Desktop)
@@ -151,7 +153,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ### Docker Commands Reference
 
 | Command | Description |
-|---------|-------------|
+| --------- | ------------- |
 | `docker compose build` | Only Build |
 | `docker compose up --build` | Build and start |
 | `docker compose up -d` | Start in background |
