@@ -1,7 +1,7 @@
 # Graphics Programming Knights Web Dev Repo
 
 <div align="center">
-  <img src="public/gpk_logo_transparent.png" alt="GPK Logo" width=200 height = 200>
+  <img src="public/gpk_logo_transparent.png" alt="GPK Logo" width=300 height=300>
 </div>
 
 ## Team
