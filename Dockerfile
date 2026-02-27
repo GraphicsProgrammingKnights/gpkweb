@@ -5,7 +5,7 @@
 
 # -----------------------------------------------------------------------------
 # Stage 1: Dependencies
-# Install only production dependencies for the final image
+# Install all dependencies needed for the build
 # -----------------------------------------------------------------------------
 FROM node:20-alpine AS deps
 
@@ -45,6 +45,9 @@ RUN npm run build
 # Minimal production image
 # -----------------------------------------------------------------------------
 FROM node:20-alpine AS runner
+
+# Add libc6-compat for Alpine compatibility with native deps in the standalone bundle
+RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
