@@ -103,13 +103,15 @@ Follow this commit style (examples provided):
 
 ```text
 .
-├── app/                 # Next.js routes
-├── components/          # Reusable UI components
-├── public/              # Static assets
-├── styles/              # Global/component styles
-├── .github/             # GitHub templates/workflows
+├── app/                   # Next.js routes
+├── components/            # Reusable UI components
+├── public/                # Static assets
+├── styles/                # Global/component styles
+├── .github/               # GitHub templates/workflows
+├── Dockerfile             # Production container
+├── docker-compose.yml     # Local Docker setup
+├── .dockerignore          # Docker build exclusions
 ├── package.json
-├── tsconfig.json
 └── README.md
 ```
 
@@ -123,9 +125,6 @@ Follow this commit style (examples provided):
 ### Build and Run with Docker Compose (Recommended)
 
 ```bash
-# Build the container
-docker compose build
-
 # Build and start the container
 docker compose up --build
 
@@ -152,6 +151,7 @@ Open [http://localhost:3000](http://localhost:3000)
 
 | Command | Description |
 |---------|-------------|
+| `docker compose build` | Only Build |
 | `docker compose up --build` | Build and start |
 | `docker compose up -d` | Start in background |
 | `docker compose down` | Stop containers |
