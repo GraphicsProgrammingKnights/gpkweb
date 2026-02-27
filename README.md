@@ -108,14 +108,60 @@ Follow this commit style (examples provided):
 ├── public/                # Static assets
 ├── styles/                # Global/component styles
 ├── .github/               # GitHub templates/workflows
+├── Dockerfile             # Production container
+├── docker-compose.yml     # Local Docker setup
+├── .dockerignore          # Docker build exclusions
+├── tsconfig.json          # TypeScript configuration
 ├── package.json
-├── tsconfig.json
 └── README.md
 ```
 
-## Infrastructure Plan
+## Docker
 
-- Docker files at repository root (`Dockerfile`, `.dockerignore`, optional `docker-compose.yml`)
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) installed
+- [Docker Compose](https://docs.docker.com/compose/install/) (included with Docker Desktop)
+
+### Build and Run with Docker Compose (Recommended)
+
+```bash
+# Build and start the container
+docker compose up --build
+
+# Run in background
+docker compose up -d --build
+
+# Stop the container
+docker compose down
+```
+
+### Build and Run with Docker (Manual)
+
+```bash
+# Build the image
+docker build -t gpkweb .
+
+# Run the container
+docker run -p 3000:3000 gpkweb
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+### Docker Commands Reference
+
+| Command | Description |
+|---------|-------------|
+| `docker compose build` | Only Build |
+| `docker compose up --build` | Build and start |
+| `docker compose up -d` | Start in background |
+| `docker compose down` | Stop containers |
+| `docker compose logs -f` | View logs |
+| `docker compose ps` | List running containers |
+
+## Infrastructure
+
+- Docker files at repository root (`Dockerfile`, `.dockerignore`, `docker-compose.yml`)
 - CI/CD workflows under `.github/workflows/`
 
 ## License

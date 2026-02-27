@@ -1,0 +1,54 @@
+# =============================================================================
+# .dockerignore - Files to exclude from Docker build context
+# This speeds up builds and keeps images smaller
+# =============================================================================
+
+# Dependencies (will be installed fresh in container)
+node_modules
+npm-debug.log*
+
+# Next.js build output (will be rebuilt in container)
+.next
+out
+
+# Git
+.git
+.gitignore
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files (should be passed at runtime, not included in build)
+.env
+.env.*
+!.env.example
+
+# Documentation and meta files
+README.md
+LICENSE
+*.md
+!package.json
+
+# Docker files (no need to copy into the build)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# GitHub
+.github
+
+# Testing
+coverage
+*.test.*
+*.spec.*
+
+# Misc
+.editorconfig
+.nvmrc

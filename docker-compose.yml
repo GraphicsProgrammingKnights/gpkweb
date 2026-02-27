@@ -1,0 +1,38 @@
+# =============================================================================
+# Docker Compose for GPK Website
+# Use this for local development and testing the production build
+# =============================================================================
+
+services:
+  # Production build - mimics how the site will run in production
+  gpkweb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+# =============================================================================
+# Usage:
+#
+# Build and start:
+#   docker compose up --build
+#
+# Start (if already built):
+#   docker compose up
+#
+# Start in background:
+#   docker compose up -d
+#
+# Stop:
+#   docker compose down
+#
+# View logs:
+#   docker compose logs -f
+#
+# Rebuild after code changes:
+#   docker compose up --build
+# =============================================================================
