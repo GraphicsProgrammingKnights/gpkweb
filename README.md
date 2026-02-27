@@ -111,6 +111,7 @@ Follow this commit style (examples provided):
 ├── Dockerfile             # Production container
 ├── docker-compose.yml     # Local Docker setup
 ├── .dockerignore          # Docker build exclusions
+├── tsconfig.json          # TypeScript configuration
 ├── package.json
 └── README.md
 ```
