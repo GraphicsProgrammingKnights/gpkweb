@@ -19,6 +19,7 @@ on:
       - "components/**"
       - "public/**"
       - "styles/**"
+      - ".github/workflows/docker.yml"
   pull_request:
     branches: [main]
     paths:
@@ -32,6 +33,7 @@ on:
       - "components/**"
       - "public/**"
       - "styles/**"
+      - ".github/workflows/docker.yml"
 
 # Cancel in-progress runs when a new commit is pushed
 concurrency:
