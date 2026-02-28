@@ -1,6 +1,6 @@
 # =============================================================================
 # Dockerfile for GPK Website (Next.js)
-# Uses multi-stage build for optimized production images (293 MB)
+# Uses multi-stage build for optimized production images
 # =============================================================================
 
 # -----------------------------------------------------------------------------
