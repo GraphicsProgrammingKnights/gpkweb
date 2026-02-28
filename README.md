@@ -89,8 +89,9 @@ npm run start
   - `fix/mobile-view-bug`
   - `chore/docker-setup`
 - Open a Pull Request into `main`.
+- GitHub Actions CI/CD runs and must pass checks.
 - At least 1 teammate review required before merge.
-- Use squash merge for clean history.
+- Use squash merge to main for clean history.
 
 ## Commit Convention
 
@@ -110,6 +111,7 @@ Follow this commit style (examples provided):
 ├── public/                # Static assets
 ├── styles/                # Global/component styles
 ├── .github/               # GitHub templates/workflows
+│   └── workflows/         # CI/CD pipelines
 ├── Dockerfile             # Production container
 ├── docker-compose.yml     # Local Docker setup
 ├── .dockerignore          # Docker build exclusions
@@ -163,8 +165,16 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ## Infrastructure
 
-- Docker files at repository root (`Dockerfile`, `.dockerignore`, `docker-compose.yml`)
-- CI/CD workflows under `.github/workflows/`
+### CI/CD Workflows
+
+GitHub Actions workflows run automatically:
+
+| Workflow        | Trigger                                       | What it does                |
+|-----------------|-----------------------------------------------|---------------------------- |
+| **CI**          | PRs and pushes to `main`                      | Runs lint and build         |
+| **Docker Build**| PRs/pushes affecting app code or Docker files | Verifies Docker image builds|
+
+View workflow runs: [Actions tab](https://github.com/GraphicsProgrammingKnights/gpkweb/actions)
 
 ## License
 
