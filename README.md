@@ -11,7 +11,7 @@
 
 **Admins**
 - Alejandro Jaimes ([@alecocosette](https://github.com/alecocosette)) | GPK President
-- Stevin George ([@stevin006](https://github.com/stevin006)) | GPK Outreach Lead
+- Stevin George ([@StevScripts](https://github.com/StevScripts)) | GPK Outreach Lead
 
 **Dev Team**
 - Kevin Li ([@kevinli7673](https://github.com/kevinli7673)) | GPK Treasurer
