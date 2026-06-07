@@ -22,8 +22,6 @@
 - Alvaro Canseco-Martinez ([@a1vcm](https://github.com/a1vcm))
 - Ethan Fu ([@yaboi332](https://github.com/yaboi332))
 
-Message Sebastian through [discord](https://discord.com/users/353944957779968010) if you have an interest in contributing.
-
 ## Tech Stack
 
 - Next.js
