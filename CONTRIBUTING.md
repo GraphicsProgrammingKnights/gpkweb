@@ -130,7 +130,7 @@ Then go to the [GitHub repo](https://github.com/GraphicsProgrammingKnights/gpkwe
 ### 7. Wait for CI and review
 
 - **CI** (lint + build + Docker build) runs automatically. Green check = all good. Red X = click into it, find the error, fix it, push again — CI will re-run.
-- **Review** — Sebastian and one of the Admins (Stevin or Alejandro) are auto-requested. You need at least one approval before merging.
+- **Review** — Sebastian, Stevin, and Alejandro are auto-requested via CODEOWNERS. You need at least one approval before merging.
 - **Respond to review comments** by either making the change requested or replying in the PR with why you disagree. Both are valid — review is a conversation.
 
 ### 8. Merge
