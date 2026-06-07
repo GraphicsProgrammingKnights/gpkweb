@@ -1,106 +1,50 @@
 # Graphics Programming Knights Web Dev Repo
 
 <div align="center">
-  <img src="public/gpk_logo_transparent.png" alt="GPK Logo" width=300 height=300>
+  <img src="public/gpk_banner_trim.png" alt="GPK Banner">
 </div>
 
 ## Team
 
-- Sebastian Noel ([@sebastian-noel](https://github.com/sebastian-noel))
-- Stevin George ([@stevin006](https://github.com/stevin006))
-- Alejandro Jaimes ([@alecocosette](https://github.com/alecocosette))
+**Lead**
+- Sebastian Noel ([@sebastian-noel](https://github.com/sebastian-noel)) | GPK Dev Lead
+
+**Admins**
+- Alejandro Jaimes ([@alecocosette](https://github.com/alecocosette)) | GPK President
+- Stevin George ([@stevin006](https://github.com/stevin006)) | GPK Outreach Lead
+
+**Dev Team**
+- Kevin Li ([@kevinli7673](https://github.com/kevinli7673)) | GPK Treasurer
+- Zeeshan Memon ([@satasatalight](https://github.com/satasatalight))
+- Nicole Bustos ([@nickycodezz](https://github.com/nickycodezz))
+- Jeremy Whatts Rodriguez ([@cunkin375](https://github.com/cunkin375))
+- Abigail Loken ([@Abbby1007](https://github.com/Abbby1007))
+- Alvaro Canseco-Martinez ([@a1vcm](https://github.com/a1vcm))
+- Ethan Fu ([@yaboi332](https://github.com/yaboi332))
 
 Message Sebastian through [discord](https://discord.com/users/353944957779968010) if you have an interest in contributing.
 
 ## Tech Stack
 
 - Next.js
-- Three.js
+- React Three Fiber (R3F) + Drei
+- Tailwind CSS
 - TypeScript
 - ESLint
 - Node.js (LTS)
 
-## Getting Started
-
-### Clone Repository
+## Quick Start
 
 ```bash
 git clone https://github.com/GraphicsProgrammingKnights/gpkweb
-```
-
-### Navigate to project directory
-
-```bash
 cd gpkweb
-```
-
-### Prerequisites
-
-- Node.js 20+ (LTS recommended)
-- npm
-
-### Set up Node.js version (using [nvm](https://github.com/nvm-sh/nvm))
-
-Use the following commands to ensure you are using Node.js 20 specified in `.nvmrc`
-
-```bash
-nvm install  # Install
-nvm use      # Switch to version
-```
-
-### Install dependencies
-
-```bash
 npm install
-```
-
-### Run development server
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open <http://localhost:3000>.
 
-### Lint
-
-```bash
-npm run lint
-```
-
-### Build
-
-```bash
-npm run build
-npm run start
-```
-
-## Git Workflow
-
-- `main` is protected and always stable.
-- Create branches from `main`:
-
-  ```bash
-  git checkout -b <branch-type>/<short-description>
-  ```
-
-  Examples:
-  - `feature/about-section`
-  - `fix/mobile-view-bug`
-  - `chore/docker-setup`
-- Open a Pull Request into `main`.
-- GitHub Actions CI/CD runs and must pass checks.
-- At least 1 teammate review required before merge.
-- Use squash merge to main for clean history.
-
-## Commit Convention
-
-Follow this commit style (examples provided):
-
-- `feat: add hero section`
-- `fix: correct navbar mobile layout`
-- `chore: update dependencies`
-- `docs: improve setup instructions`
+For full setup details (Node version pinning, lint, build, Docker), the PR workflow, branch/commit conventions, and a command cheat sheet, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Project Structure
 
@@ -114,60 +58,15 @@ Follow this commit style (examples provided):
 │   └── workflows/         # CI/CD pipelines
 ├── Dockerfile             # Production container
 ├── docker-compose.yml     # Local Docker setup
-├── .dockerignore          # Docker build exclusions
+├── CONTRIBUTING.md        # Contributor guide
 ├── tsconfig.json          # TypeScript configuration
 ├── package.json
 └── README.md
 ```
 
-## Docker
-
-### Docker Prerequisites
-
-- [Docker](https://docs.docker.com/get-docker/) installed
-- [Docker Compose](https://docs.docker.com/compose/install/) (included with Docker Desktop)
-
-### Build and Run with Docker Compose (Recommended)
-
-```bash
-# Build and start the container
-docker compose up --build
-
-# Run in background
-docker compose up -d --build
-
-# Stop the container
-docker compose down
-```
-
-### Build and Run with Docker (Manual)
-
-```bash
-# Build the image
-docker build -t gpkweb .
-
-# Run the container
-docker run -p 3000:3000 gpkweb
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-### Docker Commands Reference
-
-| Command | Description |
-| --------- | ------------- |
-| `docker compose build` | Only Build |
-| `docker compose up --build` | Build and start |
-| `docker compose up -d` | Start in background |
-| `docker compose down` | Stop containers |
-| `docker compose logs -f` | View logs |
-| `docker compose ps` | List running containers |
-
 ## Infrastructure
 
-### CI/CD Workflows
-
-GitHub Actions workflows run automatically:
+GitHub Actions workflows run automatically on PRs and pushes to `main`:
 
 | Workflow        | Trigger                                       | What it does                |
 |-----------------|-----------------------------------------------|---------------------------- |
@@ -175,6 +74,10 @@ GitHub Actions workflows run automatically:
 | **Docker Build**| PRs/pushes affecting app code or Docker files | Verifies Docker image builds|
 
 View workflow runs: [Actions tab](https://github.com/GraphicsProgrammingKnights/gpkweb/actions)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor guide — setup, PR workflow, branch/commit conventions, Docker commands, and a "what to do / not to do" reference.
 
 ## License
 
