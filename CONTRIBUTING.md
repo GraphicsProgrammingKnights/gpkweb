@@ -12,7 +12,7 @@ If anything here is unclear, ask in `#dev-general`. That's also the right place 
 - **Discord `#web-dev`** — web-project-specific coordination
 - **GitHub PR comments** — for feedback on a specific change
 
-Default to asking in Discord publicly rather than DMing,Can y public questions help the rest of the team learn.
+Default to asking in Discord publicly rather than DMing; public questions help the rest of the team learn.
 
 ---
 
