@@ -71,7 +71,7 @@ GitHub Actions workflows run automatically on PRs and pushes to `main`:
 | **CI**          | PRs and pushes to `main`                      | Runs lint and build         |
 | **Docker Build**| PRs/pushes affecting app code or Docker files | Verifies Docker image builds|
 
-View workflow runs: [Actions tab](https://github.com/GraphicsProgrammingKnights/gpkweb/actions)
+View workflow runs: [Actions tab](https://github.com/GraphicsProgrammingKnights/gpkweb/actions).
 
 ## Contributing
 
