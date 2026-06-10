@@ -2,27 +2,27 @@
 
 /* Stores the color values we need */
 :root {
-  --color-text-primary: #EAEAEA;
-  --color-text-secondary: #ABABAB;
-  --color-gold: #FFD700;
-  --color-page-background: #080808;
-  --color-card-background: #0F0018;
-  --color-card-border: #3A2152;
-  --color-accent: #842BC4;
-  --color-accent-light: #C47BFF;
+  --text-primary: #EAEAEA;
+  --text-secondary: #ABABAB;
+  --gold: #FFD700;
+  --page-background: #080808;
+  --card-background: #0F0018;
+  --card-border: #3A2152;
+  --accent: #842BC4;
+  --accent-light: #C47BFF;
 
 }
 
 /* Will generate utility classes w Tailwind*/
 @theme inline {
-  --color-text-primary: #EAEAEA;
-  --color-text-secondary: #ABABAB;
-  --color-gold: #FFD700;
-  --color-page-background: #080808;
-  --color-card-background: #0F0018;
-  --color-card-border: #3A2152;
-  --color-accent: #842BC4;
-  --color-accent-light: #C47BFF;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-gold: var(--gold);
+  --color-page-background: var(--page-background);
+  --color-card-background: var(--card-background);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
