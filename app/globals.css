@@ -15,14 +15,14 @@
 
 /* Will generate utility classes w Tailwind*/
 @theme inline {
-  --color-text-primary: var(--color-text-primary);
-  --color-text-secondary: var(--color-text-secondary);
-  --color-gold: var(--color-gold);
-  --color-page-background: var(--color-page-background);
-  --color-card-background: var(--color-card-background);
-  --color-card-border: var(--color-card-border);
-  --color-accent: var(--color-accent);
-  --color-accent-light: var(--color-accent-light);
+  --color-text-primary: #EAEAEA;
+  --color-text-secondary: #ABABAB;
+  --color-gold: #FFD700;
+  --color-page-background: #080808;
+  --color-card-background: #0F0018;
+  --color-card-border: #3A2152;
+  --color-accent: #842BC4;
+  --color-accent-light: #C47BFF;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
