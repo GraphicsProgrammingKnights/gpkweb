@@ -1,7 +1,29 @@
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 text-text-primary">
-      Graphics Programming Knights
+      {/* START OF THE HOME SECTION */}
+      <section id="home" className="min-h-screen w-full flex flex-col items-center">
+        {/* Home code goes here */}
+        <h2>Home</h2>
+      </section>
+
+      {/* START OF THE ABOUT SECTION */}
+      <section id="about" className="min-h-screen w-full flex flex-col items-center">
+        {/* About code goes here */}
+        <h2>About</h2>
+      </section>
+
+      {/* START OF THE CHALLENGES SECTION */}
+      <section id="challenges" className="min-h-screen w-full flex flex-col items-center">
+        {/* Challenges code goes here */}
+        <h2>Challenges</h2>
+      </section>
+
+      {/* START OF THE TEAM SECTION */}
+      <section id="team" className="min-h-screen w-full flex flex-col items-center">
+        {/* Team code goes here */}
+        <h2>Team</h2>
+      </section>
     </main>
   );
 }
