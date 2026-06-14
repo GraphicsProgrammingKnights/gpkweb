@@ -1,5 +1,6 @@
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
 import TeamSection from "@/components/TeamSection";
 
 export default function Home() {
@@ -8,9 +9,9 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between px-24 pb-24 text-text-primary max-w-7xl w-full mx-auto">
         {/* START OF THE HOME SECTION */}
         <section id="home" className="min-h-screen w-full flex flex-col items-center">
-          {/* Home code goes here */}
-          <h2>Home</h2>
+          <HeroSection />
         </section>
+
 
         {/* START OF THE ABOUT SECTION */}
         <section id="about" className="min-h-screen w-full flex flex-col items-center">
