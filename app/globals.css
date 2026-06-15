@@ -32,4 +32,5 @@ body {
   background: var(--color-page-background);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
