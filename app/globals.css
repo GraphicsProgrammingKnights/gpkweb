@@ -10,8 +10,17 @@
   --card-border: #3A2152;
   --accent: #842BC4;
   --accent-light: #C47BFF;
-  scroll-behavior: smooth;
+}
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Will generate utility classes w Tailwind*/

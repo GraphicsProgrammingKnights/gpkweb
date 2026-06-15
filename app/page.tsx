@@ -2,7 +2,7 @@ import AboutSection from "@/components/AboutSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-text-primary max-w-7xl w-full mx-auto">
+    <main className="flex min-h-screen flex-col items-center justify-between px-24 pb-24 text-text-primary max-w-7xl w-full mx-auto">
       {/* START OF THE HOME SECTION */}
       <section id="home" className="min-h-screen w-full flex flex-col items-center">
         {/* Home code goes here */}

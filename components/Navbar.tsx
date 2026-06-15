@@ -7,17 +7,17 @@ const sections = ["home", "about", "challenges", "team"];
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
-  /* views each section and updates when 50% visible in viewport yuhh */
+  /* views each section and updates when it crosses the middle band of the viewport yuhh */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0, rootMargin: "-40% 0px -40% 0px" },
     );
 
     // Observe each section element (if present).
@@ -35,7 +35,7 @@ export default function Navbar() {
  
   /* contains navbar w gpk tiny logo on left and blurs anything near navbar*/
   return (
-    <nav aria-label="Primary" className="sticky top-0 z-50 bg-page-background backdrop-blur-sm">
+    <nav aria-label="Primary" className="sticky top-0 z-50 bg-page-background/10 backdrop-blur-sm">
       <div className="flex items-center justify-between px-6 py-4">
         <div>
           <a href="#home" className="font-bold text-text-primary">
