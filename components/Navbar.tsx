@@ -49,10 +49,11 @@ export default function Navbar() {
             <a
               key={section}
               href={`#${section}`}
+              aria-current={activeSection === section ? "location" : undefined}
               className={`capitalize ${
                 activeSection === section
-                  ? "rounded-md border border-text-primary  bg-white text-black px-3 py-1"
-                  : "border border-transparent rounded-md text-text-primary px-3 py-1"
+                  ? "rounded-md border border-text-primary bg-white px-3 py-1 text-black"
+                  : "rounded-md border border-transparent px-3 py-1 text-text-primary"
               }`}
             >
               {section}
