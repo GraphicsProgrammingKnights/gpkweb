@@ -20,7 +20,7 @@ export default function Navbar() {
       { threshold: 0.5 },
     );
 
-    /* loops thru each array and if it exist, it will observe section for updates */
+    // Observe each section element (if present).
     sections.forEach((id) => {
       const element = document.getElementById(id);
 
