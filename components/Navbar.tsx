@@ -35,7 +35,7 @@ export default function Navbar() {
  
   /* contains navbar w gpk tiny logo on left and blurs anything near navbar*/
   return (
-    <nav className="sticky top-0 z-50 bg-page-background backdrop-blur-sm">
+    <nav aria-label="Primary" className="sticky top-0 z-50 bg-page-background backdrop-blur-sm">
       <div className="flex items-center justify-between px-6 py-4">
         <div>
           <a href="#home" className="font-bold text-text-primary">
