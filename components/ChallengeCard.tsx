@@ -7,12 +7,12 @@ export interface ChallengeCardProps {
 }
 
 export default function ChallengeCard({name, desc, tags, deadline, link} : ChallengeCardProps){ 
-    const monthNames = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    return <div className="p-12 bg-card-background border-1 border-card-border text-primary rounded-3xl w-full">
+    return <div className="p-12 bg-card-background border-1 border-card-border text-text-primary rounded-3xl w-full">
         <div className="flex flex-row justify-between">
             <div>
-                <div className="px-5 py-1 bg-accent border-accent-light rounded-3xl w-fit">
+                <div className="px-5 py-1 bg-accent border-accent-light border-2 rounded-3xl w-fit">
                     {monthNames[deadline.getMonth()] + " " + deadline.getFullYear()} Challenge
                 </div>
                 <h1 className="text-4xl font-bold pt-3 pb-2">
@@ -28,14 +28,14 @@ export default function ChallengeCard({name, desc, tags, deadline, link} : Chall
                 </h3>
             </div>
         </div>
-        <p className="py-6 w-3xl leading-8">{desc}</p>
+        <p className="py-6 leading-8">{desc}</p>
         <div className="flex flex-row pb-9">
             {tags.map((tag) => 
-                <div className="px-3 py-1 me-2 text-accent-light bg-card-background border-accent-light border-1 rounded-3xl w-fit hover:bg-accent-light hover:text-white hover:border-accent cursor-pointer" key={tag}>
+                <div className="px-3 py-1 me-2 text-accent-light bg-card-background border-accent-light border-1 rounded-3xl w-fit hover:bg-accent-light hover:text-page-background hover:border-accent cursor-pointer" key={tag}>
                     #{tag}
                 </div>)}
         </div>
-        <a className="px-7 py-3 bg-accent text-primary rounded-xl hover:bg-accent-light hover:text-page-background transition-all active:scale-[0.98] cursor-pointer" href={link}>
+        <a className="px-7 py-3 bg-accent border-2 border-accent-light text-text-primary rounded-md hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer" href={link}>
             Link to Challenge
         </a>
     </div>;
