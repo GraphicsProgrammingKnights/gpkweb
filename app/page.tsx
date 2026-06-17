@@ -12,7 +12,6 @@ export default function Home() {
           <HeroSection />
         </section>
 
-
         {/* START OF THE ABOUT SECTION */}
         <section id="about" className="min-h-screen w-full flex flex-col items-center">
           <h2 className="text-4xl font-bold p-16 m-16 h-16 gap-16">
