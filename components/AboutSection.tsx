@@ -30,16 +30,16 @@ function AboutContent() {
 
       {/* Buttons Section */}
       <div className="grid grid-cols-2 gap-4">
-        <button className="px-4 py-3 bg-accent border-2 border-accent-light text-primary rounded-md hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
+        <button className="px-4 py-3 bg-card-background border border-card-border text-primary rounded-xl hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
           Workshops
         </button>
-        <button className="px-4 py-3 bg-accent border-2 border-accent-light text-primary rounded-md hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
+        <button className="px-4 py-3 bg-card-background border border-card-border text-primary rounded-xl hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
           Monthly Challenges
         </button>
-        <button className="px-4 py-3 bg-accent border-2 border-accent-light text-primary rounded-md hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
-          Speaker Events
+        <button className="px-4 py-3 bg-card-background border border-card-border text-primary rounded-xl hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
+          Speaker Event
         </button>
-        <button className="px-4 py-3 bg-accent border-2 border-accent-light text-primary rounded-md hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
+        <button className="px-4 py-3 bg-card-background border border-card-border text-primary rounded-xl hover:bg-accent-light hover:text-page-background hover:border-accent transition-all active:scale-[0.98] cursor-pointer">
           Socials
         </button>
       </div>
