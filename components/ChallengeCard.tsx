@@ -24,7 +24,7 @@ export default function ChallengeCard({name, desc, tags, deadline, link} : Chall
                     📆 Deadline
                 </h4>
                 <h3 className="text-accent font-bold text-lg">
-                    {monthNames[deadline.getMonth()] + " " + deadline.getDay() + ", " + deadline.getFullYear()}
+                    {monthNames[deadline.getMonth()] + " " + deadline.getDate() + ", " + deadline.getFullYear()}
                 </h3>
             </div>
         </div>
