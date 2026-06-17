@@ -31,7 +31,7 @@ interface ImageCarouselProps {
  * Defined as functions of the `custom` prop (direction) to ensure that exiting
  * cards use the current direction, preventing them from sliding out the wrong way
  * if direction changes mid-transition.
- * 
+ *
  * Asymmetrical transition:
  * - Entering cards sweep in quickly and cover full distance
  * - Exiting cards fade and barely move (30% distance), creating a layered effect
@@ -42,7 +42,7 @@ const carouselVariants = {
     opacity: 0,
     scale: 0.9,
     zIndex: 1,
-  }),
+  }) as const,
   center: {
     x: 0,
     opacity: 1,
@@ -51,7 +51,7 @@ const carouselVariants = {
     transition: {
       duration: 0.6,
       ease: [0.16, 1, 0.3, 1], // Smooth, Apple-like ease-out
-    },
+    } as const,
   },
   exit: (direction: number) => ({
     x: direction > 0 ? "-30%" : "30%",
@@ -62,7 +62,7 @@ const carouselVariants = {
       duration: 0.4,
       ease: [0.16, 1, 0.3, 1],
     },
-  }),
+  }) as const,
 };
 
 export default function ImageCarousel({
