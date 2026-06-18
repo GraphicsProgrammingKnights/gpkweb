@@ -108,10 +108,6 @@ export default function ImageCarousel({
     if (intervalRef.current) clearInterval(intervalRef.current);
   }, []);
 
-  const setCardSource = useCallback((card: CarouselCard, source: string) => {
-    card.imageUrl = source;
-  }, []);
-
   useEffect(() => {
     startAutoPlay();
     return stopAutoPlay;
