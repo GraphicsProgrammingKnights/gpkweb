@@ -8,27 +8,30 @@ const CAROUSEL_CARDS: CarouselCard[] = [
   {
     title: "Shader Programming Workshop",
     caption: "Fall 2025 Workshop",
-    placeholderClass: "bg-card-background",
+    fallbackClass: "bg-card-background",
+    imageUrl: "/shader_programming_workshop.webp"
   },
   {
     title: "Ray-Marching Deep Dive",
     caption: "Spring 2025 Workshop",
-    placeholderClass: "bg-accent/20",
+    fallbackClass: "bg-accent/20",
+    imageUrl: "/ray_marching_deepdive.webp"
   },
   {
     title: "Monthly Coding Challenge",
     caption: "October 2025",
-    placeholderClass: "bg-card-border/40",
+    fallbackClass: "bg-card-border/40",
   },
   {
     title: "Industry Speaker: Real-Time Rendering",
     caption: "Fall 2025 Speaker Event",
-    placeholderClass: "bg-accent/10",
+    fallbackClass: "bg-accent/10",
   },
   {
     title: "End-of-Semester Social",
     caption: "December 2025",
-    placeholderClass: "bg-card-background/80",
+    fallbackClass: "bg-card-background/80",
+    imageUrl: "/end_of_semester_social.webp"
   },
 ];
 

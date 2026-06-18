@@ -2,12 +2,14 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 
 export interface CarouselCard {
   title: string;
   caption: string;
   /* Tailwind bg-* class for the placeholder (e.g. "bg-card-background") */
-  placeholderClass: string;
+  fallbackClass: string;
+  imageUrl?: string;
 }
 
 interface ImageCarouselProps {
@@ -106,6 +108,10 @@ export default function ImageCarousel({
     if (intervalRef.current) clearInterval(intervalRef.current);
   }, []);
 
+  const setCardSource = useCallback((card: CarouselCard, source: string) => {
+    card.imageUrl = source;
+  }, []);
+
   useEffect(() => {
     startAutoPlay();
     return stopAutoPlay;
@@ -141,11 +147,22 @@ export default function ImageCarousel({
             {visibleCards.map((card, offset) => (
               <div
                 key={offset}
-                className={`relative flex flex-col justify-end flex-1 rounded-xl border border-card-border overflow-hidden ${card.placeholderClass}`}
+                className={`relative flex flex-col justify-end flex-1 rounded-xl border border-card-border overflow-hidden ${card.fallbackClass}`}
               >
+                {/* Background image layer */}
+                {/* Next.js has an Image component which is faster than img, but it is very annoying about requiring a url for src=*/}
+                {card.imageUrl && (
+                  <Image
+                    src={card.imageUrl} // load bearing GPK logo
+                    alt={card.title}
+                    fill
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                )}
                 {/* Text overlay */}
                 <div
-                  className="px-4 py-3"
+                  className="relative z-10 px-4 py-3"
                   style={{
                     background:
                       "linear-gradient(to top, rgba(8,0,24,0.90) 60%, transparent)",
