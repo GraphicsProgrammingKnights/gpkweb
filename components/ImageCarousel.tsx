@@ -147,15 +147,7 @@ export default function ImageCarousel({
               >
                 {/* Background image layer */}
                 {/* Next.js has an Image component which is faster than img, but it is very annoying about requiring a url for src=*/}
-                {card.imageUrl && (
-                  <Image
-                    src={card.imageUrl} // load bearing GPK logo
-                    alt={card.title}
-                    fill
-                    className="absolute inset-0 w-full h-full object-cover z-0"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                )}
+                <CardImage incomingCard={card}/>
                 {/* Text overlay */}
                 <div
                   className="relative z-10 px-4 py-3"
@@ -221,6 +213,33 @@ export default function ImageCarousel({
         </button>
       </div>
     </div>
+  );
+}
+
+function CardImage({ incomingCard }: { incomingCard: CarouselCard }) {
+  try {
+    return insertCard(incomingCard);
+  } catch (error: unknown) {
+    if (error instanceof TypeError) {
+      console.error("Image is screaming crying for help in ImageCarousel.tsx:", error.message);
+    } else {
+      console.error("Unknown error in ImageCarousel.tsx:\n\t", error);
+    }
+    return null;
+  }
+}
+
+function insertCard(card: CarouselCard) {
+  return (
+    card.imageUrl && (
+      <Image
+        src={card.imageUrl}
+        alt={card.title}
+        fill
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    )
   );
 }
 
