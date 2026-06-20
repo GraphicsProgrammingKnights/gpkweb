@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 export interface Winner {
     name: string;
@@ -13,40 +13,41 @@ export interface Winner {
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 export default function WinnersSection({winners} : {winners: Array<Winner>}) {
-    const [recentWinners, setRecentWinners] = useState<Array<Winner>>([]);
-    const [prevWinners, setPrevWinners] = useState<Array<Winner>>([]);
-    const [mostRecentDate, setRecentDate] = useState<Date>(new Date(0));
-
-    useEffect(() => {
-        let mostRecentDateNow = mostRecentDate;
+    const mostRecentDate = useMemo(() => {
+        let mostRecentDateNow = new Date(0);
 
         for(const winner of winners)
             if(winner.deadline > mostRecentDateNow)
                 mostRecentDateNow = winner.deadline;
-
-        const recentFilter = (winner: Winner) => {
-            if(winner.deadline >= mostRecentDateNow)
-                return winner;
-        }
-
-        const prevFilter = (winner: Winner) => {
-            if(winner.deadline < mostRecentDateNow)
-                return winner;
-        }
-
-        setRecentWinners(winners.filter(recentFilter));
-        setPrevWinners(winners.filter(prevFilter));
-        setRecentDate(mostRecentDateNow);
+        return mostRecentDateNow;
 
     }, [winners]);
 
+    const recentWinners = useMemo(() => {
+        const recentFilter = (winner: Winner) => {
+            if(winner.deadline >= mostRecentDate)
+                return winner;
+        }
+        return winners.filter(recentFilter);
+
+    }, [winners, mostRecentDate]);
+
+    const prevWinners = useMemo(() => {
+        const prevFilter = (winner: Winner) => {
+            if(winner.deadline < mostRecentDate)
+                return winner;
+        }
+        return winners.filter(prevFilter);
+
+    }, [winners, mostRecentDate]);
+
     return <div className="w-full text-start">
         <h3 className="text-2xl font-bold pb-8">
-            {monthNames[mostRecentDate.getMonth()]}'s Winners
+            {monthNames[mostRecentDate.getMonth()]}&apos;s Winners
         </h3>
 
         <div className="grid grid-cols-3 gap-5 pb-14">
-            {recentWinners.map((winner, i) => 
+            {recentWinners.map((winner) => 
                 <WinnerCard key={winner.projectTitle} {...winner}/>
             )}
         </div>
@@ -68,26 +69,19 @@ export default function WinnersSection({winners} : {winners: Array<Winner>}) {
 function WinnerCard({placement, name, projectTitle}: Winner){
     const placementColors = ["text-gold", "text-slate-400", "text-orange-800"];
     const placementColor = placement > 3 ? "" : placementColors[placement - 1];
-    const [initals, setInitials] = useState("");
 
-    useEffect(() => {
-        const splitIndicators = [' ', '_', '-'];
-        let splitName: Array<string> = [];
+    // regex setup for initials
+    const clean = name.replace(/( |_|-|\/|\\|#|\.)/, " "); // remove common name seperators
+    const match = clean.match(/([a-z A-Z])\w+\s([a-z A-Z])\w*\s*([a-z A-Z])*(?=,*)/); // find and place initials in array
 
-        // try each split indicator for finding initials
-        for(let i = 0; i < splitIndicators.length && splitName.length < 2; i++)
-            splitName = name.split(splitIndicators[i]);
-        
-        if(splitName.length < 2)
-            setInitials(name.charAt(0).toUpperCase());
-        else 
-            setInitials(splitName[0].charAt(0).toUpperCase() + splitName[1].charAt(0).toUpperCase());
-    }, [])
+    // if match exists, it MUST have at least 3 elements in array
+    // 0 index of match is original string
+    const initials = ((match) ? match[1] + match[2] : name.charAt(0)).toUpperCase();
 
     return <div style={{order: placement}} className={`flex flex-row bg-card-background border-card-border border-1 rounded-2xl py-4 px-5`}>
         <div className="grow">
             <div className="flex justify-center place-items-center text-2xl font-bold h-20 mb-3 bg-linear-to-bl from-accent to-card-border aspect-square rounded-full">
-                {initals}
+                {initials}
             </div>
             <h5 className="font-bold">
                 {name}
