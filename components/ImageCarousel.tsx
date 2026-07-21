@@ -217,29 +217,22 @@ export default function ImageCarousel({
 }
 
 function CardImage({ incomingCard }: { incomingCard: CarouselCard }) {
-  try {
-    return insertCard(incomingCard);
-  } catch (error: unknown) {
-    if (error instanceof TypeError) {
-      console.error("Image is screaming crying for help in ImageCarousel.tsx:", error.message);
-    } else {
-      console.error("Unknown error in ImageCarousel.tsx:\n\t", error);
-    }
-    return null;
-  }
-}
+  const [failed, setFailed] = useState(false);
 
-function insertCard(card: CarouselCard) {
+  if (!incomingCard.imageUrl || failed) return null;
+
   return (
-    card.imageUrl && (
-      <Image
-        src={card.imageUrl}
-        alt={card.title}
-        fill
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-    )
+    <Image
+      src={incomingCard.imageUrl}
+      alt={incomingCard.title}
+      fill
+      className="absolute inset-0 w-full h-full object-cover z-0"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      onError={() => {
+        console.error("Image is screaming crying for help in ImageCarousel.tsx:", incomingCard.imageUrl);
+        setFailed(true);
+      }}
+    />
   );
 }
 
