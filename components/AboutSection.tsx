@@ -1,3 +1,40 @@
+import ImageCarousel, { CarouselCard } from "./ImageCarousel";
+
+/**
+ * Static card data
+ *  TODO: replace placeholderClass with a real images
+ */
+const CAROUSEL_CARDS: CarouselCard[] = [
+  {
+    title: "Shader Programming Workshop",
+    caption: "Fall 2025 Workshop",
+    fallbackClass: "bg-card-background",
+    imageUrl: "/shader_programming_workshop.webp"
+  },
+  {
+    title: "Ray-Marching Deep Dive",
+    caption: "Spring 2025 Workshop",
+    fallbackClass: "bg-accent/20",
+    imageUrl: "/ray_marching_deepdive.webp"
+  },
+  {
+    title: "Monthly Coding Challenge",
+    caption: "October 2025",
+    fallbackClass: "bg-card-border/40",
+  },
+  {
+    title: "Industry Speaker: Real-Time Rendering",
+    caption: "Fall 2025 Speaker Event",
+    fallbackClass: "bg-accent/10",
+  },
+  {
+    title: "End-of-Semester Social",
+    caption: "December 2025",
+    fallbackClass: "bg-card-background/80",
+    imageUrl: "/end_of_semester_social.webp"
+  },
+];
+
 export default function AboutSection() {
   return (
     <section className="grid grid-cols-2 gap-8">
@@ -49,8 +86,13 @@ function AboutContent() {
 
 function AboutCarousel() {
   return (
-    <section className="text-center">
-      Carousel goes here
+    <section>
+      {/*
+        autoPlay={false}  -> manual navigation (default)
+        autoPlay={true}   -> automatic sliding every 4 s
+        Switch the prop to compare both behaviours
+      */}
+      <ImageCarousel cards={CAROUSEL_CARDS} autoPlay={false} visibleCount={2} />
     </section>
   );
 }
