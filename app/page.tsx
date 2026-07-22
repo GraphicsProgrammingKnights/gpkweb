@@ -1,5 +1,6 @@
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
+import TeamSection from "@/components/TeamSection";
 
 export default function Home() {
   return (
@@ -27,8 +28,10 @@ export default function Home() {
 
         {/* START OF THE TEAM SECTION */}
         <section id="team" className="min-h-screen w-full flex flex-col items-center">
-          {/* Team code goes here */}
-          <h2>Team</h2>
+          <h2 className="text-4xl font-bold p-16 m-16 h-16 gap-16">
+            Team
+          </h2>
+          <TeamSection />
         </section>
       </main>
       <footer className="w-full">
