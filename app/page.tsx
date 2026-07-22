@@ -1,5 +1,5 @@
 import AboutSection from "@/components/AboutSection";
-import FooterSection from "../components/Footer";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="w-full">
-        <FooterSection/>
+        <Footer />
       </footer>
     </>
   );
