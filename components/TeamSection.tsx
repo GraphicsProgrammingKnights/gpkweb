@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-// defiing the type for team members
+// defining the type for team members
 type TeamMember = {
   name: string;
   title: string;
   memberSince: string;
   pfpSrc: string;
   linkedinUrl: string;
-  isOfficer: boolean; // true if officer, false if regular member for diving the team into two sections
+  isOfficer: boolean; // true if officer, false if regular member for dividing the team into two sections
 };
 
 // all of the gpk members with their info :D
@@ -16,31 +16,31 @@ const teamMembers: TeamMember[] = [
     name: "Alejandro Jaimes",
     title: "President",
     memberSince: "Summer 2025",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    pfpSrc: "/teampics/alejandro.webp",
     linkedinUrl: "https://www.linkedin.com/in/alejandro-jaimes-coco/",
     isOfficer: true,
   },
   {
     name: "Nathan Josue",
     title: "Vice President",
-    memberSince: "Spring 2026", // unsure about start date
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    memberSince: "Summer 2026",
+    pfpSrc: "/teampics/nathan.webp",
     linkedinUrl: "https://www.linkedin.com/in/nathan-josue/",
     isOfficer: true,
   },
   {
-    name: "Andres ", //unsure about last name
+    name: "Andres Ortiz",
     title: "Secretary",
     memberSince: "Fall 2025",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
-    linkedinUrl: "", // not sure about linkedin
+    pfpSrc: "/teampics/andres.webp", 
+    linkedinUrl: "https://www.linkedin.com/in/andresortizmachado/",
     isOfficer: true,
   },
   {
     name: "Kevin Li",
     title: "Treasurer",
-    memberSince: "Spring 2026",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    memberSince: "Summer 2026",
+    pfpSrc: "/teampics/kevin.webp",
     linkedinUrl: "https://www.linkedin.com/in/kevin-li7673/",
     isOfficer: true,
   },
@@ -48,15 +48,15 @@ const teamMembers: TeamMember[] = [
     name: "Sebastian Noel",
     title: "Dev Lead",
     memberSince: "Summer 2025",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    pfpSrc: "/teampics/sebastian.webp",
     linkedinUrl: "https://www.linkedin.com/in/sebastian-noel-ucf/",
     isOfficer: true,
   },
   {
-    name: "Steven George",
+    name: "Stevin George",
     title: "Outreach Lead",
-    memberSince: "Summer 2025",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    memberSince: "Summer 2026",
+    pfpSrc: "/teampics/stevin.webp",
     linkedinUrl: "https://www.linkedin.com/in/georgestevin/",
     isOfficer: true,
   },
@@ -64,14 +64,14 @@ const teamMembers: TeamMember[] = [
     name: "Alex De Vera Cruz",
     title: "Workshops Director",
     memberSince: "Summer 2025",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    pfpSrc: "/teampics/alex.webp",
     linkedinUrl: "https://www.linkedin.com/in/alex-da-vera-cruz-a68473264/",
     isOfficer: true,
   },
   {
     name: "Abigail Loken",
     title: "Dev Team Member",
-    memberSince: "Spring 2026",
+    memberSince: "Summer 2026",
     pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
     linkedinUrl: "https://www.linkedin.com/in/abigail-loken-693ba9387/",
     isOfficer: false,
@@ -79,15 +79,15 @@ const teamMembers: TeamMember[] = [
   {
     name: "Alvaro Canseco-Martinez",
     title: "Dev Team Member",
-    memberSince: "Spring 2026",
-    pfpSrc: "/teampics/alvaro.jpeg",
-    linkedinUrl: "",
+    memberSince: "Summer 2026",
+    pfpSrc: "/teampics/alvaro.webp",
+    linkedinUrl: "https://www.linkedin.com/in/alvaro-canseco-martinez/",
     isOfficer: false,
   },
   {
     name: "Ethan Fu",
     title: "Dev Team Member",
-    memberSince: "", //unsure about start date
+    memberSince: "Summer 2026",
     pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
     linkedinUrl: "https://www.linkedin.com/in/ethan-fu-/",
     isOfficer: false,
@@ -95,7 +95,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Jeremy Whatts Rodriguez",
     title: "Dev Team Member",
-    memberSince: "", //unsure about start date
+    memberSince: "Summer 2026",
     pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
     linkedinUrl: "https://www.linkedin.com/in/jeremy-whatts/",
     isOfficer: false,
@@ -103,15 +103,15 @@ const teamMembers: TeamMember[] = [
   {
     name: "Nicole Bustos",
     title: "Dev Team Member",
-    memberSince: "Summer 2025",
-    pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
+    memberSince: "Summer 2026",
+    pfpSrc: "/teampics/nicole.webp",
     linkedinUrl: "https://www.linkedin.com/in/nicolebustos/",
     isOfficer: false,
   },
   {
     name: "Zeeshan Memon",
     title: "Dev Team Member",
-    memberSince: "", //unsure about start date
+    memberSince: "Summer 2026",
     pfpSrc: "", // replace this with your pic pls, teampics/ (enter path to your photo)
     linkedinUrl: "https://www.linkedin.com/in/memon-zeeshan/",
     isOfficer: false,
@@ -181,6 +181,7 @@ function TeamCard({ member }: { member: TeamMember }) {
             src={member.pfpSrc}
             alt={member.name}
             fill
+            sizes="80px"
             className="object-cover"
           />
         ) : (
@@ -192,7 +193,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 
       {/* name / title / member since */}
       <div className="text-center">
-        <p className="font-semibold text-primary">{member.name.trim()}</p>
+        <p className="font-semibold text-text-primary">{member.name.trim()}</p>
         <p className="text-sm text-accent-light">{member.title}</p>
         <p className="text-xs text-text-secondary">
           Since {member.memberSince}
